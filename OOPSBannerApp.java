@@ -1,6 +1,10 @@
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
+        printBanner();
+    }
+
+    public static void printBanner() {
 
         String[] banner = new String[5];
 
@@ -34,7 +38,6 @@ public class OOPSBannerApp {
                 "*       ",
                 " *****  ");
 
-        // Loop to print banner
         for (String line : banner) {
             System.out.println(line);
         }
