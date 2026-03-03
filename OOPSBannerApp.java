@@ -1,11 +1,15 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class OOPSBannerApp {
+class BannerService {
 
-    static Map<Character, String[]> bannerMap = new HashMap<>();
+    private Map<Character, String[]> bannerMap = new HashMap<>();
 
-    public static void main(String[] args) {
+    public BannerService() {
+        initializePatterns();
+    }
+
+    private void initializePatterns() {
 
         bannerMap.put('O', new String[]{
                 " *****  ",
@@ -30,11 +34,9 @@ public class OOPSBannerApp {
                 "      * ",
                 " *****  "
         });
-
-        displayBanner("OOPS");
     }
 
-    public static void displayBanner(String text) {
+    public void printBanner(String text) {
 
         for (int i = 0; i < 5; i++) {
             for (char ch : text.toCharArray()) {
@@ -42,5 +44,14 @@ public class OOPSBannerApp {
             }
             System.out.println();
         }
+    }
+}
+
+public class OOPSBannerApp {
+
+    public static void main(String[] args) {
+
+        BannerService bannerService = new BannerService();
+        bannerService.printBanner("OOPS");
     }
 }
